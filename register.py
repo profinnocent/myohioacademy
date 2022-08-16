@@ -1,5 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
+import smtplib, ssl
 import sqlite3
 
 with sqlite3.connect("studentsdb") as sdb:
@@ -77,8 +78,8 @@ def reg_ok():
                 c.execute(("INSERT INTO students (id,fullname, department, level, gender, email, password)VALUES(?,?,?,?,?,?,?)"), (idx, fn1, dept1, level1, gender1, email1, password1))
                 sdb.commit()
 
-        except ConnectionError:
-            print("Error: SQL not executed on Database")
+        except Exception as ex:
+            print("Error: SQL not executed on Database", ex)
 
 
 
