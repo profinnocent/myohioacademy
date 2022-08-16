@@ -20,6 +20,46 @@ mainheight = 500
 titlebar = Frame(width=500, height=50, bg='#06283D').pack()
 navbar = Frame(width=500, height=50, bg='#06283D').pack()
 main = Frame(width=500, height=500, bg="#DFF6FF").pack()
+
+# Add books link for download
+bkx = 30
+bkbx = 400
+bky = 120
+bkd = 50
+book1 = Label(main, text="(1) Linguistics Thoery by J.R Robin", font=('arial',12, 'bold'), bg="#DFF6FF")
+book1.place(x=bkx, y=bky)
+bk1btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk1btn.place(x=bkbx, y=bky)
+
+book2 = Label(main, text="(2) Advanced Physics  by Dawling Fetchell", font=('arial',12, 'bold'), bg="#DFF6FF")
+book2.place(x=bkx, y=bky+bkd)
+bk2btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk2btn.place(x=bkbx, y=bky+bkd)
+
+book3 = Label(main, text="(3) Human Psychology by T.Y Edger", font=('arial',12, 'bold'), bg="#DFF6FF")
+book3.place(x=bkx, y=bky+(bkd*2))
+bk3btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk3btn.place(x=bkbx, y=bky+(bkd*2))
+
+book4 = Label(main, text="(4) Linear Mathematics by C. Campton", font=('arial',12, 'bold'), bg="#DFF6FF")
+book4.place(x=30, y=bky+(bkd*3))
+bk4btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk4btn.place(x=400, y=bky+(bkd*3))
+
+book5 = Label(main, text="(5) Sociology by R. Janneing & C. Park", font=('arial',12, 'bold'), bg="#DFF6FF")
+book5.place(x=30, y=bky+(bkd*4))
+bk5btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk5btn.place(x=400, y=bky+(bkd*4))
+
+book6 = Label(main, text="(6) Thermodynamics by Fletcher T.H", font=('arial',12, 'bold'), bg="#DFF6FF")
+book6.place(x=30, y=bky+(bkd*5))
+bk6btn = Button(main, text="Download", bg=priclr,fg=offwyt, padx=10)
+bk6btn.place(x=400, y=bky+(bkd*5))
+
+
+
+
+
 footer = Frame(width=500, height=50, bg='#06283D').pack()
 
 
