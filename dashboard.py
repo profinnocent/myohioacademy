@@ -204,7 +204,6 @@ def tohome():
 def logout():
     c.execute("DELETE FROM sec")
     sdb.commit()
-    sdb.close()
     tohome()
 
 # Labels for the SECTIONS

@@ -90,7 +90,8 @@ def tohome():
     import home
 
 def logout():
-    c.execute("delete from sec")
+    c.execute("DELETE FROM sec")
+    sdb.commit()
     tohome()
 
 

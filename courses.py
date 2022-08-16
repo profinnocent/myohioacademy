@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 import sqlite3
 
 with sqlite3.connect("studentsdb") as sdb:
@@ -20,7 +21,7 @@ mainheight = 500
 # Functions
 def regall():
     cscregbtn['text'] = 'Registered'
-    cscregbtn["bg"] = "red"
+    cscregbtn["bg"] = "green"
 
 
 
@@ -114,6 +115,7 @@ def tohome():
 
 def logout():
     c.execute("delete from sec")
+    sdb.commit()
     tohome()
 
 # Labels for the SECTIONS
