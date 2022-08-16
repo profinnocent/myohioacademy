@@ -1,5 +1,8 @@
 from tkinter import *
-from tkinter import ttk
+import sqlite3
+
+with sqlite3.connect("studentsdb") as sdb:
+    c = sdb.cursor()
 
 root = Tk()
 root.title("Ohio Academy | Courses")
@@ -108,6 +111,10 @@ def settingspage():
 def tohome():
     root.destroy()
     import home
+
+def logout():
+    c.execute("delete from sec")
+    tohome()
 
 # Labels for the SECTIONS
 tblabel = Label(titlebar, text="OHIO ACADEMY", bg="#06283D", fg="white", font=(25)).place(x=20, y=10)

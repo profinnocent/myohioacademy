@@ -1,6 +1,8 @@
 from tkinter import *
-from tkinter import ttk
+import sqlite3
 
+with sqlite3.connect("studentsdb") as sdb:
+    c = sdb.cursor()
 root = Tk()
 root.title("Ohio Academy | School Calendar")
 # root.geometry("700x600")
@@ -87,6 +89,10 @@ def tohome():
     root.destroy()
     import home
 
+def logout():
+    c.execute("delete from sec")
+    tohome()
+
 
 # Labels for the SECTIONS
 tblabel = Label(titlebar, text="OHIO ACADEMY", bg="#06283D", fg="white", font=(25)).place(x=20, y=10)
@@ -100,7 +106,7 @@ footerlabel = Label(footer, text="@ Copyright 2022 || Ohio Academy", bg="#06283D
 
 
 #Create logout button
-logoutbtn = Button(text="Logout", bg="#1363DF", fg="#DFF6FF", padx=10, command=tohome).place(x=380, y=15)
+logoutbtn = Button(text="Logout", bg="#1363DF", fg="#DFF6FF", padx=10, command=logout).place(x=380, y=15)
 
 # Create menubar
 menubar = Menu(navbar)

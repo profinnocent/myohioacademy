@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import ImageTk, Image
+import time
 import sqlite3
-
 with sqlite3.connect("studentsdb") as sdb:
     c = sdb.cursor()
 
@@ -19,6 +19,12 @@ offwyt = "#DFF6FF"
 
 mainwidth = 500
 mainheight = 500
+
+# Run logout to clear secdb
+c.execute("DELETE FROM sec")
+sdb.commit()
+# sdb.close()
+
 
 # Fucntions
 def toregister():
@@ -51,8 +57,21 @@ def login_ok():
             feedback["text"] = "Error : wrong details or user does not exists."
         elif result:
             feedback["text"] = "Login successfully "
+            print(f"Logged in user id is {result[0]}")
+            val = str(result[0])
+            print(val)
+
+            # persist
+            c.execute("INSERT INTO sec(id)VALUES(?)", val)
+            sdb.commit()
+            sdb.close()
+
             homepage.destroy()
             import dashboard
+
+
+
+
 
 # Sections
 main = Frame(homepage, width=mainwidth, height=mainheight, bg="#DFF6FF").pack()
