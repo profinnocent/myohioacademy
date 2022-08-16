@@ -15,8 +15,9 @@ mainwidth = 500
 mainheight = 500
 
 # Functions
-# def regall():
-#     cscregbtn['text'] = 'Registered'
+def regall():
+    cscregbtn['text'] = 'Registered'
+    cscregbtn["bg"] = "red"
 
 
 
@@ -28,7 +29,9 @@ main = Frame(width=500, height=500, bg="#DFF6FF").pack()
 footer = Frame(width=500, height=50, bg='#06283D').pack()
 
 # cscregbtn = Button(root, text="Register All", bg=priclr, fg=offwyt, width=30, command=regall).place(x=130, y=400)
-cscregbtn = Button(root, text="Register All", bg=priclr, fg=offwyt, width=30).place(x=130, y=400)
+cscregbtn = Button(root, text="Register All", bg=priclr, fg=offwyt, width=30,command=regall)
+cscregbtn.place(x=130, y=400)
+
 
 
 # table

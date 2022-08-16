@@ -1,7 +1,6 @@
 from tkinter import *
-# from tkHyperLinkManager import HyperlinkManager
-import webbrowser
-from functools import partial
+from home import *
+from PIL import Image, ImageTk
 
 root = Tk()
 root.title("Ohio Academy | Dashboard")
@@ -22,6 +21,92 @@ navbar = Frame(width=500, height=50, bg='#06283D').pack()
 main = Frame(root, width=500, height=500, bg="#DFF6FF").pack()
 footer = Frame(width=500, height=50, bg='#06283D').pack()
 
+# Dashboard Profile
+dp = ImageTk.PhotoImage(file='assets/woman50.png')
+dplbl = Label(root, image=dp)
+dplbl.place(x=50, y=150)
+
+welcomelbl = Label(root, text="Welcome, Nonso", font=('arial',20, 'bold'), bg="#DFF6FF")
+welcomelbl.place(x=120, y=160)
+
+def editsave():
+    if button["text"] == "Edit":
+        fntxb = Entry(root)
+        fntxb.insert(0, fnlbl1['text'] )
+        fntxb.place(x=350, y=230)
+
+        depttxb = Entry(root)
+        depttxb.place(x=350, y=260)
+        depttxb.insert(0, deptlbl1['text'] )
+
+        levtxb = Entry(root)
+        levtxb.place(x=350, y=290)
+        levtxb.insert(0, levlbl1['text'] )
+
+        gendertxb = Entry(root)
+        gendertxb.place(x=350, y=320)
+        gendertxb.insert(0, genderlbl1['text'] )
+
+        emailtxb = Entry(root)
+        emailtxb.place(x=350, y=350)
+        emailtxb.insert(0, emaillbl1['text'] )
+
+        pwtxb = Entry(root)
+        pwtxb.place(x=350, y=380)
+        pwtxb.insert(0, pwlbl1['text'] )
+
+
+        button["text"] = "Save"
+        button["bg"] = "green"
+
+        # Destroy the labels
+        fnlbl1.destroy()
+        deptlbl1.destroy()
+        levlbl1.destroy()
+        genderlbl1.destroy()
+        emaillbl1.destroy()
+        pwlbl1.destroy()
+
+    else:
+        pass
+
+
+
+
+fnlbl = Label(root, text="Fullname : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+fnlbl.place(x=50, y=230)
+fnlbl1 = Label(root, text=" Prof1 Onyeka ", font=('arial',14, 'bold'), bg="#DFF6FF")
+fnlbl1.place(x=200, y=230)
+
+deptlbl = Label(root, text="Department : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+deptlbl.place(x=50, y=260)
+deptlbl1 = Label(root, text=" English", font=('arial',14, 'bold'), bg="#DFF6FF")
+deptlbl1.place(x=200, y=260)
+
+levlbl = Label(root, text="Level : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+levlbl.place(x=50, y=290)
+levlbl1 = Label(root, text="100 ", font=('arial',14, 'bold'), bg="#DFF6FF")
+levlbl1.place(x=200, y=290)
+
+genderlbl = Label(root, text="Gender : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+genderlbl.place(x=50, y=320)
+genderlbl1 = Label(root, text=" Male ", font=('arial',14, 'bold'), bg="#DFF6FF")
+genderlbl1.place(x=200, y=320)
+
+emaillbl = Label(root, text="Email : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+emaillbl.place(x=50, y=350)
+emaillbl1 = Label(root, text="prof@gmail.com ", font=('arial',14, 'bold'), bg="#DFF6FF")
+emaillbl1.place(x=200, y=350)
+
+pwlbl = Label(root, text="Password : ", font=('arial',14, 'bold'), bg="#DFF6FF")
+pwlbl.place(x=50, y=380)
+pwlbl1 = Label(root, text=" **********", font=('arial',14, 'bold'), bg="#DFF6FF")
+pwlbl1.place(x=200, y=380)
+
+
+
+button = Button(root, text="Edit",fg=offwyt, bg=priclr, width=20, padx=20, pady=5,font=('arial',10, 'bold'), command=editsave)
+button.place(x=200, y=430)
 
 # Define button actions
 def dashboardpage():
